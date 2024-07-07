@@ -48,9 +48,11 @@ const App = () => {
         console.log("Referral submitted successfully!");
         handleClose();
       } else {
+        handleClose();
         console.error("Failed to submit referral:", response.status);
       }
     } catch (error) {
+      handleClose();
       console.error("Error submitting referral:", error);
     }
   };
