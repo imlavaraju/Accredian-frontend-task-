@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ReferEarn = () => {
+const App = () => {
   const [open, setOpen] = useState(false);
   const [referrerName, setReferrerName] = useState("");
   const [referrerEmail, setReferrerEmail] = useState("");
@@ -17,7 +17,6 @@ const ReferEarn = () => {
 
   const handleClose = () => {
     setOpen(false);
-    // Reset form fields when closing the modal
     setReferrerName("");
     setReferrerEmail("");
     setRefereeName("");
@@ -46,38 +45,34 @@ const ReferEarn = () => {
       });
 
       if (response.ok) {
-        // Handle success, e.g., show a success message or redirect
         console.log("Referral submitted successfully!");
-        handleClose(); // Close modal after successful submission
+        handleClose();
       } else {
-        // Handle error response from server
         console.error("Failed to submit referral:", response.status);
       }
     } catch (error) {
-      // Handle network errors or exceptions
       console.error("Error submitting referral:", error);
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      {/* Square Boxes Section */}
       <div className="flex  flex-wrap mb-6 justify-center md:justify-between gap-6">
-        {/* Square Box 1 */}
+        {/*REfer benefits  Box 1 */}
         <div className="bg-white rounded-lg shadow-md p-6 w-44 h-44">
           <p className="text-base text-blue font-roboto font-normal leading-22 text-center text-blue-800">
             Submit referrals easily via our website’s referral section.
           </p>
         </div>
 
-        {/* Square Box 2 */}
+        {/*Refer Box 2 */}
         <div className="bg-white rounded-lg shadow-md p-6 w-44 h-44">
           <p className="text-base font-roboto font-normal leading-22 text-center text-blue-800">
             Earn rewards once your referral joins an Accredian program.
           </p>
         </div>
 
-        {/* Square Box 3 */}
+        {/*refer  Box 3 */}
         <div className="bg-white rounded-lg shadow-md p-6 w-44 h-44">
           <p className="text-base font-roboto font-normal leading-22 text-center text-blue-800">
             Both parties receive a bonus 30 days after program enrollment.
@@ -173,4 +168,4 @@ const ReferEarn = () => {
   );
 };
 
-export default ReferEarn;
+export default App;
